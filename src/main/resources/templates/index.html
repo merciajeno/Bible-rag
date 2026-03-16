@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Bible RAG</title>
+</head>
+
+<body>
+
+<h2>Bible Question</h2>
+
+<form action="/ask" method="post">
+
+    <input type="text" name="question" placeholder="Ask about scripture..." style="width:300px">
+
+    <button type="submit">Ask</button>
+
+</form>
+
+<br>
+
+<div th:if="${question}">
+    <h3>Your Question</h3>
+    <p th:text="${question}"></p>
+
+    <h3>Response</h3>
+    <p th:text="${response}"></p>
+</div>
+
+</body>
+</html>
